@@ -1,9 +1,7 @@
-package main
+package create
 
 import (
 	"fmt"
-	"log"
-	"os"
 	"strconv"
 )
 
@@ -35,6 +33,7 @@ func (t *Asset) create(key string, value int) {
 	t.block[key] = value
 }
 
+/*
 func main() {
 	var block Asset
 	if err := block.Init(os.Args); err != nil {
@@ -47,3 +46,4 @@ func main() {
 		log.Println("main func finishes")
 	}
 }
+*/
