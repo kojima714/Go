@@ -1,3 +1,3 @@
-this repositry is go learning workspace
+First we use it to save the Go language study record.
 
-testtest
+And then use it for version control of the chain code.
