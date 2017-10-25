@@ -14,27 +14,25 @@ type Block struct {
 var block Block
 
 // Init は当面最初のクエリを作るために仕様
-func (b *Block) Init(args []string) string {
+func (b *Block) Init(args []string) bool {
 	if len(args) != 3 {
 		fmt.Println("no key and value")
-		return ""
+		return true
 	}
-	b.create(args)
-	return "succss"
+	n, _ := strconv.Atoi(args[2])
+	b.create(args[1], n)
+	return true
 }
 
-func (b *Block) create(args []string) int {
+func (b *Block) create(key string, value int) error {
 	fmt.Println("Begin creating a new block")
-	fmt.Println(args[1], args[2])
-	n, _ := strconv.Atoi(args[2])
-	*b = Block{args[1], n}
-	fmt.Println(b)
+	*b = Block{key, value}
 	fmt.Println("Finish creating a new block")
-	return -1
+	return nil
 }
 
 func main() {
-	if block.Init(os.Args) == "" {
+	if block.Init(os.Args) == false {
 		fmt.Println("error")
 		return
 	}
